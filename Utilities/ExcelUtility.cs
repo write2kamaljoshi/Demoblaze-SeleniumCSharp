@@ -22,14 +22,14 @@ namespace SeleniumProject2.Utilities
                     int rowCount = worksheet.Dimension.Rows;
                     for (int row = 2; row <= rowCount; row++)
                     {
-                        string laptopModel = worksheet.Cells[row, columnNumber].Value?.ToString();
+                        string laptopModel = worksheet.Cells[row, columnNumber].Value.ToString();
                         laptopModels.Add(laptopModel);
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Console.WriteLine($"Error reading Excel file: {ex.Message}");
+                Console.WriteLine($"Error reading Excel file: {e.Message}");
             }
             return laptopModels;
         }

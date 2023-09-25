@@ -28,12 +28,10 @@ namespace SeleniumProject.BaseClass
 
             // Initialize ExtentReports
             extent = new ExtentReports();
-            //var htmlReporter = new ExtentSparkReporter(@"C:\\Users\\kamalj\\source\\repos\\SeleniumDemo\\SeleniumProject\\ExtentReports\\UnitTest3.html");
             var htmlReporter = new ExtentSparkReporter(Path.Combine(path, reportFileName));
             extent.AttachReporter(htmlReporter);
 
             // Setting up Chrome driver
-            //driver = new ChromeDriver();
             driver = BrowserUtility.InitializeBrowser(1);
             driver.Manage().Window.Maximize();
             driver.Url = "https://www.demoblaze.com/index.html";

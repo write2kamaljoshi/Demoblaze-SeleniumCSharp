@@ -87,11 +87,8 @@ namespace SeleniumProject.TestScripts
                 test.Log(Status.Fail, $"Test failed: {e.Message}");
 
                 string screenshotFilePath = ScreenshotUtility.CaptureScreenshot(driver, "TestFailure");
-                if (!string.IsNullOrEmpty(screenshotFilePath))
-                {
-                    // Adding screenshot in report
-                    test.AddScreenCaptureFromPath(screenshotFilePath);
-                }
+                // Adding screenshot in report
+                test.AddScreenCaptureFromPath(screenshotFilePath);
                 Console.Write(e.StackTrace); 
                 throw;
             }
